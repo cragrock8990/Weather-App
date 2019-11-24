@@ -1,0 +1,27 @@
+<table class="table" id="weatherTable" *ngIf="weathers?.length > 0">
+  <thead class="thead-light">
+  <tr>
+    <th scope="col">City</th>
+    <th scope="col">{{weatherTableColumns.firstColumn | date :'h aaa'}}</th>
+    <th scope="col">{{weatherTableColumns.secondColumn | date :'h aaa'}}</th>
+    <th scope="col">{{weatherTableColumns.thirdColumn | date :'h aaa'}}</th>
+    <th scope="col">{{weatherTableColumns.fourthColumn | date :'h aaa'}}</th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <tr *ngFor="let weather of weathers">
+    <td scope="row">
+      <ng-container>
+          <p><strong>{{weather.city.name }}</strong></p>
+          <p class='alt'>Humidity</p>
+      </ng-container>
+    </td>
+    <td scope="row"><app-cell-details [weatherListItem]="weather.list[0]"></app-cell-details></td>
+    <td scope="row"><app-cell-details [weatherListItem]="weather.list[2]"></app-cell-details></td>
+    <td scope="row"><app-cell-details [weatherListItem]="weather.list[4]"></app-cell-details></td>
+    <td scope="row"><app-cell-details [weatherListItem]="weather.list[6]"></app-cell-details></td>
+  </tr>
+  </tbody>
+</table>
+

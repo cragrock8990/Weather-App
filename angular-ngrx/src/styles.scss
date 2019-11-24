@@ -1,0 +1,29 @@
+/* You can add global styles to this file, and also import other style files */
+$error-color: darkred;
+
+.invalid-feedback {
+  display: block;
+  color: $error-color;
+}
+
+p.alt {
+  font-size: 12px;
+  font-style: italic;
+}
+
+.form-control {
+  height: 50px;
+
+  &.ng-invalid.ng-touched {
+    border: solid 3px $error-color;
+    box-shadow: none;
+  }
+}
+
+.btn-search {
+  height: 50px;
+}
+
+.navbar-brand {
+  font-size: 2rem;
+}

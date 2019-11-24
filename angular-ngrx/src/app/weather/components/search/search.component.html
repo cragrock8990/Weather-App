@@ -1,0 +1,16 @@
+<form [formGroup]='criteriaFormGroup' (submit)="searchWeather()" class="mb-5">
+  <div class="form-row">
+      <div class="form-group col-md-8">
+          <label for="cityName" class='sr-only'>City Name</label>
+          <input class="form-control mb-2"
+             id="cityName"
+             name="cityName"
+             placeholder="City name"
+             type="text"
+             formControlName='cityName'>
+            <p class='invalid-feedback' *ngIf="(cityNameFormControl.dirty || cityNameFormControl.touched) && cityNameFormControl.hasError('required')" ><strong>X  </strong>Please provide a valid city</p>
+            <p class='invalid-feedback' *ngIf="!cityNameFormControl.hasError('required') && errorMessage"  ><strong>X  </strong>{{errorMessage}}</p>
+      </div>
+      <button class="btn-search btn btn-primary col-md-4 mb-6" type="submit" >Search</button>
+   </div>   
+</form>
